@@ -1,0 +1,96 @@
+{
+  "Header": {
+    "home": "início",
+    "projects": "projetos",
+    "stack": "stack",
+    "experience": "experiência",
+    "contact": "contato"
+  },
+  "LocaleSwitcher": {
+    "label": "Mudar idioma",
+    "locale": "{locale, select, pt_BR {PT} en {ENG} other {Unknown}}"
+  },
+  "Hero": {
+    "idea": "Vamos conversar",
+    "cv": "Abrir Currículo",
+    "theme": "mudar tema",
+    "front": "Desenvolvedor Front-end",
+    "iAm": "Sou",
+    "frontend": "Dev",
+    "developer": "Front-end",
+    "basedIn": "que atua",
+    "hello": "Tenho {years} anos de experiência como desenvolvedor Front-end atuando principalmente com Angular, também tenho experiência com React e Next.js em projetos pessoais."
+  },
+  "Projects": {
+    "title": "Meus Projetos",
+    "description": "Dê uma olhada no que andei cozinhando",
+    "os": "Sistema operacional 100% online, inspirado no linux e hyprland.",
+    "disc": "Crie servidores, entre em chamadas de áudio e vídeo e envie mensagens emm tempo real.",
+    "jdm": "Design em Figma de uma concessionária fictícia especializada em carros japoneses",
+    "status": "Status do Deploy"
+  },
+  "Stack": {
+    "title": "Stack",
+    "solving": "Desenvolvendo soluções com",
+    "stack": "uma stack em contínua expansão",
+    "coding": "fazendo programa",
+    "years": "anos",
+    "year": "ano",
+    "experience": "de experiência"
+  },
+  "Experience": {
+    "title": "Experiência Profissional",
+    "description": "jornada profissional",
+    "Front": {
+      "title": "Desenvolvedor Front-end I",
+      "company": "GFT Technologies",
+      "description": "Atuei como principal responsável pela manutenção e evolução das iniciativas brasileiras no portal de um grande banco internacional. Parte de uma squad ágil com contato diário com times globais. "
+    },
+    "Secondary": {
+      "title": "Desenvolvedor Front-end Pleno",
+      "company": "CONSISTE CONSULTORIA E SISTEMAS LTDA"
+    },
+      "Responsibilities": {
+        "title": "Atuação no projeto",
+        "point1": "Desenvolvi e revisei interfaces Angular com base em protótipos Figma, garantindo fidelidade visual e consistência com design system global.",
+        "point2": "Realizei integração de APIs REST e implementação de mocks com Wiremock para viabilizar desenvolvimento e testes independentes do Back-End.",
+        "point3": "Mantive a qualidade do código de acordo com padrões definidos pelo global e boas práticas do Angular e TypeScript.",
+        "point4": "Colaborei com times globais, solicitando e realizando code reviews, e atendendo pedidos relacionados a Squad.",
+        "point5": "Mantive múltiplos aplicativos Angular, garantindo alto desempenho, responsividade e boa experiência do usuário por meio de testes consistentes de usabilidade e incorporação de feedback dos clientes.",
+        "point6": "Conceitualizei e implementei bibliotecas Angular reutilizáveis para agilizar o desenvolvimento e centralizar manutenções.",
+        "point7": "Projetei e desenvolvi novos aplicativos para atender às necessidades administrativas dos clientes."
+      },
+      "Achievements": {
+        "title": "Principais resultados",
+        "point1": "Planejei e executei a correção de três anos de débitos técnicos, corrigindo mais de 1.000 violações de ESLint/TypeScript, migrando NgRx (Redux) para Signals/RxJS e substituindo APIs e componentes depreciados.",
+        "point2": "Contribuí na reformulação da UI/UX do projeto, desenvolvendo interfaces com alta fidelidade aos protótipos Figma e auxiliando o time de design com dúvidas técnicas, sugestões e liderando as validações por four-eyes.",
+        "point3": "Implementei testes unitários com Jest elevando o code coverage para um mínimo de 90% e estabeleci junto a Squad esse indicador como DoD (Definition of Done).",
+        "point4": "Desenvolvi testes end-to-end (E2E) com WebdriverIO para cobertura dos principais fluxos dos usuários, aumentando a confiabilidade dos deploys e reduzindo o tempo de resposta a incidentes em produção.",
+        "point5": "Desenvolvi um WebApp Angular para criação de dashboards dinâmicos semelhante ao Power BI, usando gráficos arrastáveis e redimensionáveis e dados integrados de entidades públicas como CADASTUR e IBGE.",
+        "point6": "Criei uma nova versão de um aplicativo de CRM com melhorias significativas na UI/UX, facilitando o cadastro e visualização de relacionamento entre empresas e pessoas.",
+        "point7": "Projetei e desenvolvi 6 bibliotecas Angular reutilizáveis, reduzindo o tempo de desenvolvimento em novos aplicativos e centralizando manutenções em 10 projetos."
+      },   
+    "date": {
+      "current": "Jan 2025 - Atual",
+      "secondary": "Jun 2022 - Jan 2025"
+    }
+  },
+  "Cta": {
+    "title": "Vamos Conversar",
+    "subtitle": "Estou animado para aplicar minhas habilidades em seu projeto. Entre em contato para saber mais sobre como posso contribuir.",
+    "message": "mensagem",
+    "send": "enviar mensagem",
+    "message_field": "Por favor, escreva uma mensagem primeiro.",
+    "email_field": "Por favor, preencha o email corretamente primeiro.",
+    "sent": "Obrigado por entrar em contato! Envio um retorno dentro das próximas 48hrs :)",
+    "place1": "Você também pode entrar em contato",
+    "place2": "por qualquer um desses canais",
+    "find": "Me encontre no",
+    "error": "Ocorreu um erro ao enviar o email. Entre em contato usando os canais ao lado."
+  },
+  "Footer": {
+    "rights": "Todos os direitos reservados",
+    "developed": "Desenvolvido com Next.js, Tailwind, e Figma;",
+    "thanks": "obrigado"
+  }
+}
