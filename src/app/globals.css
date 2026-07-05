@@ -71,7 +71,7 @@ body {
     @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 via-zinc-700 to-black;
   }
   .dark .gradient_hero{
-      @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-white;
+      @apply bg-clip-text text-transparent bg-gradient-to-b from-green-800 via-white to-white;
   }
 }
 

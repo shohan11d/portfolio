@@ -32,42 +32,30 @@ const Header = () => {
   const openResume = () => {
     window.open(resumes[locale])
   }
-  const scrambleSpeed = 0.5;
-  const { ref: jp, replay: replayJp } = useScramble({ 
-    text: "フロントエンドデベロッパー",
-    speed: scrambleSpeed
-  });
-  const { ref: latin, replay: replayLatin } = useScramble({ 
-    text: t('front'),
-    speed: scrambleSpeed
-  });
+
+ 
 
   return (
     <section id="hero" className="mb-[120px] md:mb-[100px]">
       <div className="text-nowrap text-center font-thin uppercase text-lg font-martian text-comment-grey-darker lg:text-sm xs:text-xs sm:hidden">
-      <span style={{textOrientation: 'upright', writingMode: 'vertical-rl'}} ref={latin}   onMouseOver={replayLatin} onFocus={replayLatin}  className="absolute left-3  xl:-left-1   bottom-5 "></span>
-      <span style={{textOrientation: 'upright', writingMode: 'vertical-rl'}} ref={jp}  onMouseOver={replayJp} onFocus={replayJp}  className="absolute right-3 xs:-right-2 lg:-right-1   top-14 tracking-[0.4rem]"></span>
       </div>
         <motion.div initial="hidden" animate={"visible"}  variants={container}  className="mb-3 justify-center items-center text-center flex flex-col relative">
-        {/* <Spotlight
-        className="-top-20 left-[600px] md:left-60 md:-top-20"
-        fill="#808080"
-      /> */}
+   
           <h1 className="text-5xl sm:text-4xl xs:text-2xl xxs:text-xl font-bold flex items-center flex-col justify-center  leading-[84px] text-nowrap text-comment-grey w-fit">
             <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3 relative">
-              {t("iAm")} <span className="gradient_hero">Eric Augusto</span>
+              I’m <span className="gradient_hero">K. M. Shohan</span>
               <Pill src={'/images/profile_pic.jpg'}/>
               <span className="absolute -right-6 xs:-right-3">,</span>
             </motion.div>
 
             <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
-              <span className="gradient_hero">{t("frontend")}</span>
-              <Pill/> {t("developer")}
+              <span className="gradient_hero">Full-Stack</span>
+              <Pill/>Developer
             </motion.div>
 
           {locale != 'pt-BR' && <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
-              {t("basedIn")} <span className="gradient_hero">Brazil</span>
-              <Pill src={'/images/tucano.jpg'}/>
+               based in<span className="gradient_hero">Bangladesh</span>
+              <Pill src={'/images/tiger.jpg'}/>
             </motion.div>}
 
           </h1>
