@@ -11,19 +11,19 @@ const ibm = IBM_Plex_Mono({ weight: ["100", "300", "700"], subsets: ["latin"], v
 const martian = Martian_Mono({ weight: ["100", "400", "700"], subsets: ["latin"], variable: "--font-martian" });
 
 export const metadata: Metadata = {
-  title: "Eric Augusto | Frontend Developer",
-  description: "I'm Eric Augusto a frontend developer specializing in modern web technologies like Angular, React and Next.js. Welcome to my portfolio.",
+  title: "K. M. Shohan | Full-Stack Developer",
+  description: "I'm K. M. Shohan, a full-stack developer specializing in modern web technologies like Angular, React and Next.js. Welcome to my portfolio.",
   openGraph: {
-    title: "Eric Augusto | Frontend Developer",
-    description: "Check out Eric Augusto's frontend projects built with Next.js and tailwind.",
-    url: "https://ericaugusto.pages.dev",
-    siteName: "Eric Augusto Portfolio",
+    title: "K. M. Shohan | Full-Stack Developer",
+    description: "Check out K. M. Shohan's full-stack projects built with Next.js and tailwind.",
+    url: "https://kmdshohan.pages.dev",
+    siteName: "K. M. Shohan Portfolio",
     images: [
       {
-        url: "https://ericaugusto.pages.dev/images/tucano.jpg",
+        url: "https://kmdshohan.pages.dev/images/tucano.jpg",
         width: 1200,
         height: 630,
-        alt: "Eric Augusto Portfolio Tucano",
+        alt: "K. M. Shohan Portfolio Tucano",
       },
     ],
     locale: "en_US",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eric Augusto | Frontend Developer Portfolio",
-    description: "Frontend developer passionate about creating performant, accessible web apps.",
-    images: ["https://ericaugusto.pages.dev/images/tucano.jpg"],
+    title: "K. M. Shohan | Full-Stack Developer Portfolio",
+    description: "Full-Stack developer passionate about creating performant, accessible web apps.",
+    images: ["https://kmdshohan.pages.dev/images/tucano.jpg"],
   },
 };
 
