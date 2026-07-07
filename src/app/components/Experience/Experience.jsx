@@ -1,25 +1,22 @@
-import { useTranslations } from "next-intl";
 import ExperienceCard from "./ExperienceCard";
 
 export default function Experience() {
-  const t = useTranslations("Experience");
-
   const current = {
-    title: t("Front.title"),
-    company: t("Front.company"),
-    description: t("Front.description"),
-    date: t('date.current'),
+    title: "Front-end Developer I",
+    company: "GFT Technologies",
+    description: "Acted as the primary person responsible for the maintenance and evolution of the Brazilian pages on the portal of a major international bank. Part of an agile squad with daily interaction with global teams.",
+    date: "Jan 2025 - Present",
     obligations: [
-      t("Responsibilities.point1"),
-      t("Responsibilities.point2"),
-      t("Responsibilities.point3"),
-      t("Responsibilities.point4"),
+      "Developed and reviewed Angular interfaces based on Figma prototypes, ensuring visual fidelity and consistency with the global design system.",
+      "Integrated REST APIs and implemented mocks with Wiremock to enable development and testing independent of the Back-End.",
+      "Maintained code quality according to global standards and Angular and TypeScript best practices.",
+      "Collaborated with global teams, requesting and performing code reviews, and handling Squad-related requests.",
     ],
     achievements: [
-      t("Achievements.point1"),
-      t("Achievements.point2"),
-      t("Achievements.point3"),
-      t("Achievements.point4"),
+      "Planned and executed the correction of three years of technical debt, fixing over 1,000 ESLint/TypeScript violations, migrating NgRx (Redux) to Signals/RxJS and replacing deprecated APIs and components.",
+      "Contributed to the project's UI/UX overhaul, developing high-fidelity interfaces from Figma prototypes and assisting the design team with technical questions, suggestions, and leading four-eyes validations.",
+      "Implemented unit tests with Jest, raising code coverage to a minimum of 90% and establishing this indicator with the Squad as DoD (Definition of Done).",
+      "Developed end-to-end (E2E) tests with WebdriverIO for main user flows, increasing deploy reliability and reducing production incident response time.",
     ],
     skills: [
       { img: "/images/skills/angular.png", name: "Angular" },
@@ -36,18 +33,18 @@ export default function Experience() {
 
   
   const secondary = {
-    title: t("Secondary.title"),
-    company: t("Secondary.company"),
-    date: t('date.secondary'),
+    title: "Mid-level Front-end Developer",
+    company: "CONSISTE CONSULTORIA E SISTEMAS LTDA",
+    date: "Jun 2022 - Jan 2025",
     obligations: [
-      t("Responsibilities.point5"),
-      t("Responsibilities.point6"),
-      t("Responsibilities.point7"),
+      "Developed and maintained 5+ Angular web applications, ensuring high performance, responsiveness and good user experience through regular usability testing and feedback incorporation.",
+      "Conceptualized and implemented reusable Angular libraries to streamline development and centralize maintenance.",
+      "Explored and integrated new technologies and methodologies to enhance user experience.",
     ],
     achievements: [
-      t("Achievements.point5"),
-      t("Achievements.point6"),
-      t("Achievements.point7"),
+      "Designed and developed 6 reusable Angular libraries, reducing development time by 60% and centralizing maintenance, resulting in a more efficient workflow across 10+ projects.",
+      "Developed a dynamic dashboard web application similar to Microsoft Power BI, enabling users to create custom dashboards with flexible features for presenting data integrated from public entities like CADASTUR and IBGE.",
+      "Enhanced the UI/UX of an advanced table component with filtering, aggregation, and sorting functionalities, improving data access efficiency and user satisfaction.",
     ],
     skills: [
       { img: "/images/skills/angular.png", name: "Angular" },
@@ -67,7 +64,7 @@ export default function Experience() {
       <div className="mb-7 flex gap-2 flex-col">
 
       <h2 className="text-4xl lg:text-3xl text-center  sm:text-2xl font-light text-wrap leading-tight">
-        {t("title")}
+        {"My Experience"}
       </h2>
       {/* <label className='dark:bg-white/95 w-fit  bg-accent-orange text-white dark:text-black/90 h-min flex-grow-0 lg:text-[10px] sm:text-[8px]'>{t('description')}</label> */}
       </div>

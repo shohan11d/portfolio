@@ -1,8 +1,6 @@
-import { useTranslations } from "next-intl";
 import StackBox from './StackBox';
 
 const ExperienceCard = ({ title, company, description, date, obligations, achievements, skills }) => {
-  const t = useTranslations("Experience");
   return (
     <div className='flex flex-col gap-2 outline outline-1 outline-black dark:outline-white p-[6px] rounded-[30px] bg-black/5 dark:bg-[#ffffff07]'>
       <div className="flex items-start justify-between rounded-t-3xl rounded-b-xl  pb-3 pt-1 px-4 bg-black/80 dark:bg-white/90 text-white dark:text-black">
@@ -22,7 +20,7 @@ const ExperienceCard = ({ title, company, description, date, obligations, achiev
           </div>
         </span>
         <p className="font-light my-3">{description}</p>
-        {achievements && achievements.length > 0 && <><span className="font-code">{t('Achievements.title')}</span>
+        {achievements && achievements.length > 0 && <><span className="font-code">{"Key Results"}</span>
         <ul className="list-disc pl-5 space-y-2 my-2 ">
           {achievements.map((achievement, index) => (
             <li key={index} className="flex items-start">
@@ -31,7 +29,7 @@ const ExperienceCard = ({ title, company, description, date, obligations, achiev
             </li>
           ))}
         </ul></>}
-        <span className="font-code">{t('Responsibilities.title')}</span>
+        <span className="font-code">{"Role in the project"}</span>
         <ul className="list-disc pl-5 space-y-2 my-2">
           {obligations.map((obligation, index) => (
             <li key={index} className="flex items-start">

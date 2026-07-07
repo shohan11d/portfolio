@@ -1,7 +1,6 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import { validate } from "react-email-validator";
 import { toast } from "sonner";
@@ -9,21 +8,20 @@ import { toast } from "sonner";
 export const Contact = () => {
   const form = useRef();
   const [email, setEmail] = useState("");
-  const t = useTranslations("Cta");
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     const messageField = form.current.message.value; // Accessing the value of the message field
     if (!validate(email)) {
-      toast.error(t("email_field"), {
+      toast.error("Please fill the email field correctly first.", {
         position: "bottom-center",
         duration: 4000,
       });
       return;
     }
     if (messageField.trim() === "") {
-      toast.error(t("message_field"), {
+      toast.error("Please fill the message field first", {
         position: "bottom-center",
         duration: 4000,
       });
@@ -37,10 +35,10 @@ export const Contact = () => {
         () => {
           form.current.reset();
           setEmail("");
-          toast.success(t("sent"), { position: "bottom-center", duration: 10000 });
+          toast.success("Thanks for contacting me! I will mail you back within 48hrs :)", { position: "bottom-center", duration: 10000 });
         },
         (error) => {
-          toast.error(t("error"), {
+          toast.error("An error occurred while sending the email. Contact me using the channels on the right.", {
             position: "bottom-center",
             duration: 4000,
           });
@@ -57,10 +55,10 @@ export const Contact = () => {
     >
       <div className="flex flex-col gap-4 py-4">
         <h2 className="text-4xl sm:text-2xl xs:text-xl whitespace-pre-line">
-          {t("title")}
+          {"Let's talk"}
         </h2>
         <h6 className="text-xs sm:text-[10px] xs:text-[9px] whitespace-pre-line font-light text-comment-grey dark:text-[#c0c0c0] subpixel-antialiased">
-          {t("subtitle")}
+          {"I'm excited to apply my skills to your projects. Contact me to learn more about how I can contribute."}
         </h6>
       </div>
       <fieldset className="flex  gap-2 flex-col sm:text-xs  xs:text-[10px">
@@ -77,7 +75,7 @@ export const Contact = () => {
       </fieldset>
       <fieldset className="flex gap-2 flex-col sm:text-xs xs:text-[10px]">
         <label className="text-nowrap font-code" htmlFor="message">
-          <span className="text-pink-500 font-code">const</span> {t("message")} =
+          <span className="text-pink-500 font-code">const</span> message =
         </label>
         <textarea
           name="message"
@@ -92,7 +90,7 @@ export const Contact = () => {
         onClick={(e) => sendEmail(e)}
         className="w-[50%] bg-[#cccccc24] dark:bg-[#00000024] shadow-md shadow-[#ffffff33] outline outline-1 2xl:w-[66%] xl:w-[98%] xl:mx-auto ml-auto pr-2 py-2 cursor-pointer group items-center flex relative text-center  rounded-full hover:opacity-80 h-full align-middle"
       >
-        <span className="mx-auto ml-8 font-code">{t("send")}</span>
+        <span className="mx-auto ml-8 font-code">send message</span>
         <div className="dark:bg-white bg-black  rounded-full h-6 w-14 flex items-center justify-end px-2">
           <div
             className="svgMask betterhover:group-hover:translate-x-1 transition-all group-active:!translate-x-2 cursor-pointer size-6 rotate-180  dark:bg-black bg-white"

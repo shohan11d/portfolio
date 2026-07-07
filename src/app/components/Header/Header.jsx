@@ -4,14 +4,11 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ThemeSwitcher from "../Hero/ThemeSwitcher";
-import LocaleSwitcher from "../LocaleSwitcher/LocaleSwitcher";
-import { useTranslations } from 'next-intl';
 import { useOnClickOutside } from 'usehooks-ts';
 
 const Header = () => {
   const refMenu = useRef();
   const refBtn = useRef();
-  const t = useTranslations('Header');
   const handleClickOutside = (event) => {
 
     if (!refBtn?.current?.contains(event.target) && window.innerWidth <= 767) {
@@ -50,9 +47,6 @@ const Header = () => {
         <SlideTabs />
       </motion.div>
       <ul className='flex gap-3 items-center'>
-        <li className="cursor-pointer">
-          <LocaleSwitcher />
-        </li>
         <li>
           <ThemeSwitcher />
         </li>
@@ -70,7 +64,7 @@ const Header = () => {
         <ul className='flex flex-col dark:bg-black bg-white py-4 rounded-md outline outline-1 outline-comment-grey gap-3 items-center'>
           {rotas.map((rota) =>
             <li key={rota} className='w-full text-center'>
-              <a onClick={handleClickOutside} href={`#${rota}`} className='hover:opacity-80 w-full block px-4'>{t(rota)}</a>
+              <a onClick={handleClickOutside} href={`#${rota}`} className='hover:opacity-80 w-full block px-4'>{rota}</a>
             </li>
           )}
         </ul>
@@ -82,7 +76,6 @@ const Header = () => {
 };
 
 const SlideTabs = () => {
-  const t = useTranslations('Header');
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
@@ -112,7 +105,6 @@ const SlideTabs = () => {
 
 const Tab = ({ children, setPosition }) => {
   const ref = useRef(null);
-  const t = useTranslations('Header');
 
   return (
     <li
@@ -131,7 +123,7 @@ const Tab = ({ children, setPosition }) => {
       className="relative z-10 block cursor-pointer text-xs uppercase"
     >
       <a className="px-3 py-1.5 block " href={`#${children}`}>
-        {t(children)}
+        {children}
       </a>
     </li>
   );

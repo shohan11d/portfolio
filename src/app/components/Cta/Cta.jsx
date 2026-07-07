@@ -4,13 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import {Contact} from './components/Contact';
 import style from './Cta.module.css'
-import { useTranslations } from "next-intl";
 
 export default function Cta(){
     const contact = ["mailto:eric72001@hotmail.com", "tel:+55(71) 98188-6126", "https://github.com/ericaugusto-git", "https://www.linkedin.com/in/eric-augusto-775245a9/"];
     const [copiedLink, setCopiedLink] = useState();
     const [timeout, setTimeoutState] = useState();
-    const t = useTranslations('Cta');
     const copylink = (link, event) => {
         event.stopPropagation();
         navigator.clipboard.writeText(link.replace('mailto:', '').replace('tel:', ''));
@@ -31,7 +29,7 @@ export default function Cta(){
         </div>
         <div className="dark:bg-[#12121285] bg-slate-100 xl:col-span-1 col-span-4 rounded-[40px] flex flex-col justify-between py-5 px-5 outline-1 outline outline-offset-4 outline-black/20 dark:outline-white/20 ">
             <span className="text-3xl sm:text-2xl xs:text-xl leading-snug xl:mb-8">
-           {t('place1')} <br/>{t('place2')} 🤙🏾
+           You can also hit me up in <br/>any of this places 🤙🏾
             </span>
             <div className="flex gap-4">
                 <a href="mailto:eric72001@hotmail.com" target="_blank" className="size-9 group w-20 rounded-full  duration-500 p-1 bg-[#54daff]  hover:betterhover:opacity-70">
@@ -50,7 +48,7 @@ export default function Cta(){
         </div>
         <div className="dark:bg-[#12121285] bg-slate-100 text-2xl p-5 size-full col-span-3 xl:col-span-1 rounded-[40px] outline-1 outline outline-offset-4 outline-black/20 dark:outline-white/20 ">
             <span className="sm:text-2xl xs:text-xl">
-            {t('find')}:
+            Find me at:
             </span>
             <div className="flex gap-6 size-full py-4">
                 <a href="https://www.linkedin.com/in/eric-augusto-775245a9/" target="_blank" className="size-[90%]  duration-300  bg-[rgb(10,102,194)] transition-all hover:betterhover:opacity-70  outline rounded-[30px] p-4">

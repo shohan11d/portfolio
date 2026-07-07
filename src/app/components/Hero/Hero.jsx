@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { resumes } from "@/app/constants/resume";
 import { motion } from "framer-motion";
-import { useLocale, useTranslations } from "next-intl";
 import { useScramble } from "use-scramble";
 import Pill from "./Pill";
 
@@ -26,57 +25,52 @@ const item = {
 
 
 const Header = () => {
-  const locale = useLocale();
-  const t = useTranslations("Hero");
-  
   const openResume = () => {
-    window.open(resumes[locale])
+    window.open(resumes.en)
   }
-
- 
 
   return (
     <section id="hero" className="mb-[120px] md:mb-[100px]">
       <div className="text-nowrap text-center font-thin uppercase text-lg font-martian text-comment-grey-darker lg:text-sm xs:text-xs sm:hidden">
       </div>
-        <motion.div initial="hidden" animate={"visible"}  variants={container}  className="mb-3 justify-center items-center text-center flex flex-col relative">
-   
-          <h1 className="text-5xl sm:text-4xl xs:text-2xl xxs:text-xl font-bold flex items-center flex-col justify-center  leading-[84px] text-nowrap text-comment-grey w-fit">
-            <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3 relative">
-              I’m <span className="gradient_hero">K. M. Shohan</span>
-              <Pill src={'/images/profile_pic.jpg'}/>
-              <span className="absolute -right-6 xs:-right-3">,</span>
-            </motion.div>
+      <motion.div initial="hidden" animate={"visible"} variants={container} className="mb-3 justify-center items-center text-center flex flex-col relative">
 
-            <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
-              <span className="gradient_hero">Full-Stack</span>
-              <Pill/>Developer
-            </motion.div>
+        <h1 className="text-5xl sm:text-4xl xs:text-2xl xxs:text-xl font-bold flex items-center flex-col justify-center  leading-[84px] text-nowrap text-comment-grey w-fit">
+          <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3 relative">
+            I’m <span className="gradient_hero">K. M. Shohan</span>
+            <Pill src={'/images/profile_pic.jpg'} />
+            <span className="absolute -right-6 xs:-right-3">,</span>
+          </motion.div>
 
-          {locale != 'pt-BR' && <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
-               based in<span className="gradient_hero">Bangladesh</span>
-              <Pill src={'/images/tiger.jpg'}/>
-            </motion.div>}
+          <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
+            <span className="gradient_hero">Full-Stack</span>
+            <Pill />Developer
+          </motion.div>
 
-          </h1>
-          <motion.h6  variants={item} className="px-9 text-comment-grey pt-3 pb-8 max-w-[53rem] lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px]">{t('hello', { years: new Date().getFullYear() - 2022 })}</motion.h6>
-          <motion.div  variants={item} className="flex font-code justify-center w-full items-center gap-4 mt-3 lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px] md:flex-col xs:justify-center xs:gap-1">
-            <a href="#contact" className=" bg-black p-2 xxs:p-1 px-9 outline-1 text-white outline-black/10 dark:outline-white/10 outline outline-offset-2 rounded-full hover:opacity-80 w-fit md:w-full h-full align-middle shadow-inner shadow-white/20">
-              {t('idea')}
+          <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
+            based in<span className="gradient_hero">Bangladesh</span>
+            <Pill src={'/images/tiger.jpg'} />
+          </motion.div>
+
+        </h1>
+        <motion.h6 variants={item} className="px-9 text-comment-grey pt-3 pb-8 max-w-[53rem] lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px]">{`I have ${new Date().getFullYear() - 2022} years of experience as a Front-end Developer working mostly with Angular, also have experience with React and Next.js in personal projects.`}</motion.h6>
+        <motion.div variants={item} className="flex font-code justify-center w-full items-center gap-4 mt-3 lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px] md:flex-col xs:justify-center xs:gap-1">
+          <a href="#contact" className=" bg-black p-2 xxs:p-1 px-9 outline-1 text-white outline-black/10 dark:outline-white/10 outline outline-offset-2 rounded-full hover:opacity-80 w-fit md:w-full h-full align-middle shadow-inner shadow-white/20">
+            Let's talk
+          </a>
+          <div className="flex items-center gap-4 xs:gap-2">
+            <a onClick={openResume} className="h-full  p-2 rounded-md hover:border-zinc-700 w-fit cursor-pointer transition-all hover:scale-105">
+              Open CV
             </a>
-            <div className="flex items-center gap-4 xs:gap-2">
-              <a onClick={openResume} className="h-full  p-2 rounded-md hover:border-zinc-700 w-fit cursor-pointer transition-all hover:scale-105">
-                {t('cv')}
-              </a>
-              <a href="https://github.com/ericaugusto-git" target="_blank" className='group'><span style={{maskImage: `url("/images/github_cta.svg")`}} className="block size-[18px] xs:size-3 sm:size-4 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
-              <a href="https://www.linkedin.com/in/eric-augusto-775245a9/" target="_blank" className='group'><span style={{maskImage: `url("/images/linkedin_cta.svg")`}} className="block size-[18px]  xs:size-3 sm:size-4 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
-              <a href="https://wa.me/5571981886126" target="_blank" className='group'><span style={{maskImage: `url("/images/zap.svg")`}} className="block size-[18px] sm:size-4  xs:size-3 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
-            </div>
-              
-          </motion.div> 
-          
+            <a href="https://github.com/shohan11d" target="_blank" className='group'><span style={{ maskImage: `url("/images/github_cta.svg")` }} className="block size-[18px] xs:size-3 sm:size-4 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
+            <a href="https://www.linkedin.com/in/shohan11d/" target="_blank" className='group'><span style={{ maskImage: `url("/images/linkedin_cta.svg")` }} className="block size-[18px]  xs:size-3 sm:size-4 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
+            <a href="https://wa.me/8801323582233" target="_blank" className='group'><span style={{ maskImage: `url("/images/zap.svg")` }} className="block size-[18px] sm:size-4  xs:size-3 bg-black  dark:bg-white svgMask group-hover:opacity-80 cursor-pointer"></span> </a>
+          </div>
+
         </motion.div>
-        {/* <motion.div className="size-full" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}}>
+
+      </motion.div>
+      {/* <motion.div className="size-full" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.6}}>
           <Code />
         </motion.div> */}
     </section>
