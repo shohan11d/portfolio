@@ -6,7 +6,7 @@ import {Contact} from './components/Contact';
 import style from './Cta.module.css'
 
 export default function Cta(){
-    const contact = ["mailto:eric72001@hotmail.com", "tel:+55(71) 98188-6126", "https://github.com/ericaugusto-git", "https://www.linkedin.com/in/eric-augusto-775245a9/"];
+    const contact = ["mailto:shohan11d@gmail.com", "tel:+8801323582233", "https://github.com/shohan11d", "https://www.linkedin.com/in/shohan11d/"];
     const [copiedLink, setCopiedLink] = useState();
     const [timeout, setTimeoutState] = useState();
     const copylink = (link, event) => {
@@ -32,13 +32,10 @@ export default function Cta(){
            You can also hit me up in <br/>any of this places 🤙🏾
             </span>
             <div className="flex gap-4">
-                <a href="mailto:eric72001@hotmail.com" target="_blank" className="size-9 group w-20 rounded-full  duration-500 p-1 bg-[#54daff]  hover:betterhover:opacity-70">
+                <a href="mailto:shohan11d@gmail.com" target="_blank" className="size-9 group w-20 rounded-full  duration-500 p-1 bg-[#54daff]  hover:betterhover:opacity-70">
                     <div style={{maskImage: `url("images/mail.svg")`, maskSize: 'auto'}} className="block size-full  bg-white svgMask"></div>
                 </a>
-                <a href="tel:+55(71) 98188-6126" className="size-9 w-20 group rounded-full  duration-500 p-1 bg-[#a64ca6]  hover:betterhover:opacity-70">
-                    <div style={{maskImage: `url("images/phone.svg")`, maskSize: 'auto'}} className="block size-full bg-white svgMask"></div>
-                </a>
-                <a href="https://wa.me/5571981886126" target="_blank" className="size-9 w-20 transition-all duration-500 bg-[#25d366]  hover:betterhover:opacity-70 rounded-full p-1 group cursor-pointer">
+                <a href="https://wa.me/8801323582233" target="_blank" className="size-9 w-20 transition-all duration-500 bg-[#25d366]  hover:betterhover:opacity-70 rounded-full p-1 group cursor-pointer">
                     <div style={{maskImage: `url("images/zap.svg")`, maskSize: 'auto'}} className="block size-full bg-white svgMask"></div>
                 </a>
                 {/* <a href="https://discord.com/users/368858792139423747" target="_blank" className="duration-500 bg-[#7289da] group size-9 w-20 rounded-full p-1  hover:betterhover:opacity-70">
@@ -51,10 +48,10 @@ export default function Cta(){
             Find me at:
             </span>
             <div className="flex gap-6 size-full py-4">
-                <a href="https://www.linkedin.com/in/eric-augusto-775245a9/" target="_blank" className="size-[90%]  duration-300  bg-[rgb(10,102,194)] transition-all hover:betterhover:opacity-70  outline rounded-[30px] p-4">
+                <a href="https://www.linkedin.com/in/shohan11d/" target="_blank" className="size-[90%]  duration-300  bg-[rgb(10,102,194)] transition-all hover:betterhover:opacity-70  outline rounded-[30px] p-4">
                     <div style={{maskImage: `url("images/linkedin_cta.svg")`, maskSize: 'auto'}} className="block size-full  bg-white svgMask"></div>
                 </a>
-                <a href="https://github.com/ericaugusto-git" target="_blank" className="size-[90%]  bg-[rgb(1,4,9)]  duration-300 hover:betterhover:opacity-70 transition-all outline rounded-[30px] p-4">
+                <a href="https://github.com/shohan11d" target="_blank" className="size-[90%]  bg-[rgb(1,4,9)]  duration-300 hover:betterhover:opacity-70 transition-all outline rounded-[30px] p-4">
                     <div style={{maskImage: `url("images/github_cta.svg")`, maskSize: 'auto'}} className="block size-full  bg-white svgMask"></div>
                 </a>
             </div>

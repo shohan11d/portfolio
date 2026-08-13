@@ -1,18 +1,57 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { validate } from "react-email-validator";
 import { toast } from "sonner";
 
-export const Contact = () => {
-  const form = useRef();
-  const [email, setEmail] = useState("");
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-  const sendEmail = (e) => {
+const getEmailJsErrorMessage = (error) => {
+  const message = typeof error?.text === "string" ? error.text : "";
+  const status = error?.status;
+
+  if (status === 403 && message.includes("domain")) {
+    return "EmailJS blocked this site. Add your domain under Account → Security → Allowed origins (include http://localhost:3000).";
+  }
+
+  if (status === 403) {
+    return message || "EmailJS rejected the request (403). Check Account → Security settings in EmailJS.";
+  }
+
+  if (message) {
+    return message;
+  }
+
+  return "Could not send your message. Try again or use the contact links on the right.";
+};
+
+export const Contact = () => {
+  const form = useRef(null);
+  const [email, setEmail] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  useEffect(() => {
+    if (EMAILJS_PUBLIC_KEY) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+  }, []);
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    const messageField = form.current.message.value; // Accessing the value of the message field
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast.error("Email service is not configured. Add EmailJS env vars and restart the dev server.", {
+        position: "bottom-center",
+        duration: 6000,
+      });
+      return;
+    }
+
+    const messageField = form.current?.message?.value ?? "";
+
     if (!validate(email)) {
       toast.error("Please fill the email field correctly first.", {
         position: "bottom-center",
@@ -20,6 +59,7 @@ export const Contact = () => {
       });
       return;
     }
+
     if (messageField.trim() === "") {
       toast.error("Please fill the message field first", {
         position: "bottom-center",
@@ -27,24 +67,32 @@ export const Contact = () => {
       });
       return;
     }
-    emailjs
-      .sendForm("service_dlgsppw", "template_7o9zlq5", form.current, {
-        publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          form.current.reset();
-          setEmail("");
-          toast.success("Thanks for contacting me! I will mail you back within 48hrs :)", { position: "bottom-center", duration: 10000 });
-        },
-        (error) => {
-          toast.error("An error occurred while sending the email. Contact me using the channels on the right.", {
-            position: "bottom-center",
-            duration: 4000,
-          });
-        },
+
+    setIsSending(true);
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form.current,
+        { publicKey: EMAILJS_PUBLIC_KEY },
       );
 
+      form.current.reset();
+      setEmail("");
+      toast.success("Thanks for contacting me! I will mail you back within 48hrs :)", {
+        position: "bottom-center",
+        duration: 10000,
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error(getEmailJsErrorMessage(error), {
+        position: "bottom-center",
+        duration: 8000,
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -84,26 +132,19 @@ export const Contact = () => {
           rows={5}
         ></textarea>
       </fieldset>
-      {/* bg-[#cccccc24] */}
-      {/* <a onClick={(e) => sendEmail(e)} className="w-[50%] ml-auto pr-2 py-2 cursor-pointer group items-center flex relative text-center dark:bg-black  rounded-full hover:opacity-80 h-full align-middle"> */}
-      <a
-        onClick={(e) => sendEmail(e)}
-        className="w-[50%] bg-[#cccccc24] dark:bg-[#00000024] shadow-md shadow-[#ffffff33] outline outline-1 2xl:w-[66%] xl:w-[98%] xl:mx-auto ml-auto pr-2 py-2 cursor-pointer group items-center flex relative text-center  rounded-full hover:opacity-80 h-full align-middle"
+      <button
+        type="submit"
+        disabled={isSending}
+        className="w-[50%] bg-[#cccccc24] dark:bg-[#00000024] shadow-md shadow-[#ffffff33] outline outline-1 2xl:w-[66%] xl:w-[98%] xl:mx-auto ml-auto pr-2 py-2 cursor-pointer group items-center flex relative text-center rounded-full hover:opacity-80 h-full align-middle disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <span className="mx-auto ml-8 font-code">send message</span>
-        <div className="dark:bg-white bg-black  rounded-full h-6 w-14 flex items-center justify-end px-2">
+        <span className="mx-auto ml-8 font-code">{isSending ? "sending..." : "send message"}</span>
+        <div className="dark:bg-white bg-black rounded-full h-6 w-14 flex items-center justify-end px-2">
           <div
-            className="svgMask betterhover:group-hover:translate-x-1 transition-all group-active:!translate-x-2 cursor-pointer size-6 rotate-180  dark:bg-black bg-white"
-            style={{ maskImage: `url("images/arrow.svg"` }}
+            className="svgMask betterhover:group-hover:translate-x-1 transition-all group-active:!translate-x-2 cursor-pointer size-6 rotate-180 dark:bg-black bg-white"
+            style={{ maskImage: `url("images/arrow.svg")` }}
           ></div>
         </div>
-      </a>
-      {/* <button
-        type="submit"
-        className="bg-[#0B0B0B] text-white flex relative self-end p-1 pr-8 xs:pr-5 xs:p-[2px] group rounded mt-[-20px]"
-      >
-        <span className="uppercase italic font-light sm:text-xs xs:text-[8px]">{t('send')}</span>
-      </button> */}
+      </button>
     </form>
   );
 };

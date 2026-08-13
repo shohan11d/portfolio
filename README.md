@@ -10,9 +10,9 @@
 - emailjs so the user can send emails to me on the CTA section of the page
 - Typing animation using GSAP for the hero section
   
-<p align="center">🚀 Deploy: https://ericaugusto.pages.dev</p>
+<p align="center">🚀 Deploy: https://kmdshohan.pages.dev</p>
 <p align="center">
-  <a href="https://ericaugusto.pages.dev" >
+  <a href="https://kmdshohan.pages.dev" >
     <img src="https://github.com/user-attachments/assets/c9087f87-2ef0-4be0-b257-f5b5285ae41a"/>
   </a>
 </p>

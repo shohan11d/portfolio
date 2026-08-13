@@ -1,62 +1,80 @@
 export const skills_imgs = {
-  "angular": {
-    "name": "Angular",
-    "image": "/images/skills/angular.png",
-    "color": "#FE38BA",
-    "exp": "4"
+  react: {
+    name: "React",
+    image: "/images/skills/react.png",
+    color: "#61DAFB",
+    exp: "2",
   },
-  "react": {
-    "name": "React",
-    "image": "/images/skills/react.png",
-    "color": "#61DAFB",
-    "exp": "2"
+  next: {
+    name: "Next.js",
+    image: "/images/skills/next.png",
+    color: "#aeb2ba",
+    exp: "1",
   },
-  "next": {
-    "name": "Next.js",
-    "image": "/images/skills/next.png",
-    "color": "#aeb2ba",
-    "exp": "1"
+  tailwind: {
+    name: "Tailwind CSS",
+    image: "/images/skills/tailwind.png",
+    color: "#38B2AC",
+    exp: "1",
   },
-  "tailwind": {
-    "name": "Tailwind CSS",
-    "image": "/images/skills/tailwind.png",
-    "color": "#38B2AC",
-    "exp": "1"
+  ts: {
+    name: "TypeScript",
+    image: "/images/skills/ts.png",
+    color: "#3178C6",
+    exp: "4",
   },
-  "ts": {
-    "name": "TypeScript",
-    "image": "/images/skills/ts.png",
-    "color": "#3178C6",
-    "exp": "4"
+  scss: {
+    name: "SCSS",
+    image: "/images/skills/scss.png",
+    color: "#CD6799",
+    exp: "4",
   },
-  "py": {
-    "name": "Python",
-    "image": "/images/skills/py.webp",
-    "color": "#3776AB",
-    "exp": "1" 
+  html: {
+    name: "HTML",
+    image: "/images/skills/html.png",
+    color: "#E34F26",
+    exp: "4",
   },
-  "scss": {
-    "name": "SCSS",
-    "image": "/images/skills/scss.png",
-    "color": "#CD6799",
-    "exp": "4"
+  py: {
+    name: "Python",
+    image: "/images/skills/py.webp",
+    color: "#3776AB",
+    exp: "1",
   },
-  "html": {
-    "name": "HTML",
-    "image": "/images/skills/html.png",
-    "color": "#E34F26",
-    "exp": "4"
+  mongodb: {
+    name: "MongoDB",
+    image: "/images/skills/mongodb.png",
+    color: "#47A248",
+    exp: "1",
   },
-  "git": {
-    "name": "Git",
-    "image": "/images/skills/git.png",
-    "color": "#F05032",
-    "exp": "4"
+  betterauth: {
+    name: "Better Auth",
+    image: "/images/skills/betterauth.png",
+    color: "#888888",
+    exp: "1",
   },
-  "figma": {
-    "name": "Figma",
-    "image": "/images/skills/figma.png",
-    "color": "#F24E1E",
-    "exp": "4"
-  }
-}
+  git: {
+    name: "Git",
+    image: "/images/skills/git.png",
+    color: "#F05032",
+    exp: "4",
+  },
+  figma: {
+    name: "Figma",
+    image: "/images/skills/figma.png",
+    color: "#F24E1E",
+    exp: "4",
+  },
+  cursor: {
+    name: "Cursor",
+    image: "/images/skills/cursor.png",
+    color: "#9CA3AF",
+    exp: "1",
+  },
+  claude: {
+    name: "Claude",
+    image: "/images/skills/claude.png",
+    color: "#CC785C",
+    exp: "1",
+  },
+};
