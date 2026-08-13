@@ -1,4 +1,22 @@
 export const skills_imgs = {
+  cpp: {
+    name: "C++",
+    image: "/images/skills/cpp.png",
+    color: "#00599C",
+    exp: "4",
+  },
+  ts: {
+    name: "TypeScript",
+    image: "/images/skills/ts.png",
+    color: "#3178C6",
+    exp: "4",
+  },
+  py: {
+    name: "Python",
+    image: "/images/skills/py.webp",
+    color: "#3776AB",
+    exp: "1",
+  },
   react: {
     name: "React",
     image: "/images/skills/react.png",
@@ -12,34 +30,16 @@ export const skills_imgs = {
     exp: "1",
   },
   tailwind: {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     image: "/images/skills/tailwind.png",
     color: "#38B2AC",
     exp: "1",
-  },
-  ts: {
-    name: "TypeScript",
-    image: "/images/skills/ts.png",
-    color: "#3178C6",
-    exp: "4",
   },
   scss: {
     name: "SCSS",
     image: "/images/skills/scss.png",
     color: "#CD6799",
     exp: "4",
-  },
-  html: {
-    name: "HTML",
-    image: "/images/skills/html.png",
-    color: "#E34F26",
-    exp: "4",
-  },
-  py: {
-    name: "Python",
-    image: "/images/skills/py.webp",
-    color: "#3776AB",
-    exp: "1",
   },
   mongodb: {
     name: "MongoDB",
