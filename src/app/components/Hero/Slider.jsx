@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 
 const images = [
-  '/images/kashi-os.png',
-  '/images/discord_clone.png',
-  '/images/hero_section.png'
+  '/images/project1.png',
+  '/images/project2.png',
+  '/images/project3.png'
 ];
 
 const VerticalSlideshow = () => {

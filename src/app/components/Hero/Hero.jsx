@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { resumes } from "@/app/constants/resume";
+import { resume } from "@/app/constants/resume";
 import { motion } from "framer-motion";
-import { useScramble } from "use-scramble";
 import Pill from "./Pill";
 
 
@@ -26,7 +25,7 @@ const item = {
 
 const Header = () => {
   const openResume = () => {
-    window.open(resumes.en)
+    window.open(resume)
   }
 
   return (
@@ -43,7 +42,7 @@ const Header = () => {
           </motion.div>
 
           <motion.div variants={item} className="flex items-center gap-6 lg:gap-4 xs:gap-3">
-            <span className="gradient_hero">Full-Stack</span>
+            <span className="gradient_hero2">Full-Stack</span>
             <Pill />Developer
           </motion.div>
 
@@ -53,7 +52,7 @@ const Header = () => {
           </motion.div>
 
         </h1>
-        <motion.h6 variants={item} className="px-9 text-comment-grey pt-3 pb-8 max-w-[53rem] lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px]">{`I have ${new Date().getFullYear() - 2022} years of experience as a Front-end Developer working mostly with Angular, also have experience with React and Next.js in personal projects.`}</motion.h6>
+        <motion.h6 variants={item} className="px-9 text-comment-grey pt-3 pb-8 max-w-[53rem] lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px]">Full-Stack Developer open to new opportunities. I design and ship end-to-end web products — from interface to API to deployment.</motion.h6>
         <motion.div variants={item} className="flex font-code justify-center w-full items-center gap-4 mt-3 lg:text-sm sm:text-xs xs:text-[10px] xxs:text-[8px] md:flex-col xs:justify-center xs:gap-1">
           <a href="#contact" className=" bg-black p-2 xxs:p-1 px-9 outline-1 text-white outline-black/10 dark:outline-white/10 outline outline-offset-2 rounded-full hover:opacity-80 w-fit md:w-full h-full align-middle shadow-inner shadow-white/20">
             Let's talk

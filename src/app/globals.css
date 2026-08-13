@@ -73,6 +73,9 @@ body {
   .dark .gradient_hero{
       @apply bg-clip-text text-transparent bg-gradient-to-b from-green-800 via-white to-white;
   }
+  .dark .gradient_hero2{
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-red-800 via-white to-white;
+  }
 }
 
 
